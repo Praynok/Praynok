@@ -39,18 +39,28 @@ La pregunta que más se repite. Regla práctica:
 > qué permisos. Un subagente puede llevar varias skills precargadas.
 
 > ### ⚠️ Error frecuente: "un agente es un conjunto de skills"
-> No exactamente. Un **agente** es un modelo que razona, un bucle (observa → decide → actúa →
-> comprueba → repite), unas **herramientas** para actuar (leer ficheros, ejecutar `psql`…) y unas
-> instrucciones. Una **skill** es un manual: le dice al agente *cómo* hacer algo, pero por sí
-> sola no ejecuta nada.
+> No exactamente. Las skills son una pieza que el agente **usa**, no lo que lo define.
+> Un agente tiene cuatro piezas:
+>
+> 1. **Un modelo** que razona y decide (Haiku, Sonnet, Opus, Fable…).
+> 2. **Un bucle**: observa → decide → actúa → mira el resultado → repite, hasta terminar.
+> 3. **Herramientas** para actuar: leer y editar ficheros, ejecutar `psql`, llamar a MCP…
+> 4. **Contexto e instrucciones**: el prompt de sistema, el CLAUDE.md, la conversación y la memoria.
+>
+> Una **skill** es un paquete de conocimiento o procedimiento (instrucciones, a veces con
+> consultas SQL, plantillas o scripts) que el agente **carga cuando lo necesita**. Le dice
+> *cómo* hacer algo, pero por sí sola no ejecuta nada.
 >
 > Analogía: el agente es el DBA (criterio, manos y forma de trabajar); las skills son sus
 > runbooks. Un agente sin skills sigue siendo un agente; un montón de skills sin agente es
 > solo documentación.
 >
-> Lo que sí es cierto: lo que distingue a un agente **especializado** (el revisor, el de
-> guardia) de uno genérico suele ser su combinación de skills, herramientas, modelo e
-> instrucciones. Eso es exactamente lo que se configura en el módulo 6.
+> Lo que sí es cierto: un "revisor de migraciones" y un "DBA de guardia" pueden usar el mismo
+> modelo y diferenciarse solo en lo que se les configura:
+>
+> **agente especializado = agente genérico + skills + herramientas + instrucciones (+ modelo elegido)**
+>
+> Exactamente eso es lo que se configura en el módulo 6.
 
 ## 1.4 Divulgación progresiva (por qué las skills escalan)
 
