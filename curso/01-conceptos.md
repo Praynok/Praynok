@@ -46,6 +46,8 @@ La pregunta que más se repite. Regla práctica:
 > 2. **Un bucle**: observa → decide → actúa → mira el resultado → repite, hasta terminar.
 > 3. **Herramientas** para actuar: leer y editar ficheros, ejecutar `psql`, llamar a MCP…
 > 4. **Contexto e instrucciones**: el prompt de sistema, el CLAUDE.md, la conversación y la memoria.
+>    Ojo: un **subagente** (módulo 6) empieza con contexto limpio. No ve la conversación de la
+>    sesión principal; solo recibe su propio prompt, el CLAUDE.md y la tarea que le encargan.
 >
 > Una **skill** es un paquete de conocimiento o procedimiento (instrucciones, a veces con
 > consultas SQL, plantillas o scripts) que el agente **carga cuando lo necesita**. Le dice
@@ -55,8 +57,9 @@ La pregunta que más se repite. Regla práctica:
 > runbooks. Un agente sin skills sigue siendo un agente; un montón de skills sin agente es
 > solo documentación.
 >
-> Lo que sí es cierto: un "revisor de migraciones" y un "DBA de guardia" pueden usar el mismo
-> modelo y diferenciarse solo en lo que se les configura:
+> Lo que sí es cierto: un "revisor de migraciones" y un "DBA de guardia" podrían compartir
+> modelo y diferenciarse solo en lo que se les configura. El modelo también es una de esas
+> piezas configurables (en el módulo 6 cada uno usa uno distinto):
 >
 > **agente especializado = agente genérico + skills + herramientas + instrucciones (+ modelo elegido)**
 >
