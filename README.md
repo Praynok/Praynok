@@ -22,11 +22,11 @@ marketplace de plugins listo para clonar y adaptar.
 | # | Módulo | Resultado al terminar |
 |---|---|---|
 | 1 | [Conceptos: las piezas de Claude Code](curso/01-conceptos.md) | Sabes qué pieza usar para cada necesidad del equipo |
-| 2 | [Instalación y primer arranque](curso/02-instalacion.md) | Claude Code funcionando con la cuenta del equipo |
+| 2 | [Instalación y primer arranque](curso/02-instalacion.md) | Claude Code funcionando y sabes qué superficie usar (CLI, IDE, web) |
 | 3 | [Configuración y permisos](curso/03-configuracion-permisos.md) | Jerarquía de settings y permisos seguros para DBAs |
 | 4 | [Memoria del proyecto: CLAUDE.md](curso/04-claude-md.md) | Claude conoce el contexto de cada base de datos |
 | 5 | [Skills: convertir métodos en skills](curso/05-skills.md) | Tus primeros métodos convertidos en skills |
-| 6 | [Subagentes con skills propias](curso/06-subagentes.md) | Agentes especializados con sus skills precargadas |
+| 6 | [Subagentes con skills propias](curso/06-subagentes.md) | Sabes crear y configurar agentes paso a paso y aplicar el patrón líder (Haiku lee, Sonnet escribe, Fable para lo difícil) |
 | 7 | [Hooks: guardarraíles automáticos](curso/07-hooks.md) | SQL destructivo bloqueado aunque el modelo se equivoque |
 | 8 | [MCP y conexión a bases de datos](curso/08-mcp-bases-de-datos.md) | Acceso a datos controlado y de solo lectura |
 | 9 | [Distribución: plugins y marketplace del equipo](curso/09-plugins-marketplace.md) | Todo el equipo instala lo mismo con un comando |
@@ -56,9 +56,10 @@ Duración orientativa: **2 jornadas** (módulos 1–6 el primer día, 7–12 el 
 │   ├── CLAUDE.md
 │   ├── .claude/settings.json           ← permisos + plugins habilitados para todo el equipo
 │   ├── .claude/skills/                 ← skill propia del proyecto
-│   ├── .claude/agents/                 ← agente propio del proyecto
+│   ├── .claude/agents/                 ← agentes del proyecto: auditor, explorador, implementador, especialista
 │   ├── .mcp.json
 │   └── migrations/                     ← migración con errores para los ejercicios
+├── extras/config-personal/             ← patrón líder para tu ~/.claude (uso general)
 └── curso/                              ← los módulos
 ```
 

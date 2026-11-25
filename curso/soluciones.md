@@ -75,6 +75,28 @@ WHERE i.id IN (
 Pregunta 6.4: el agente no puede editar porque su `tools` solo incluye `Read, Grep, Glob`;
 no tiene la herramienta `Edit` disponible.
 
+### Ejercicio 6, punto 6 — Modo líder
+
+| Petición | Agente esperado | Por qué |
+|---|---|---|
+| (a) ¿Qué tablas tocan las migraciones? | `explorador` (Haiku) | Solo leer y listar |
+| (b) Escribe la versión corregida | `implementador` (Sonnet), quizá tras `revisor-migraciones` | Hay que crear y modificar ficheros |
+| (c) Diseña el particionado por mes de `invoices` | `especialista` (Fable) | Diseño de alto riesgo en tabla > 50 GB |
+
+Si el líder hace (a) él mismo, no es un error grave: para lecturas muy cortas delegar no compensa.
+Si usa `especialista` para (a) o (b), revisa las `description` de los agentes.
+
+### Ejercicio 6, punto 7 — Clasificación
+
+| Tarea | Agente |
+|---|---|
+| Buscar dónde se usa `invoice_lines.discount` | explorador |
+| Añadir una columna `notes` | implementador |
+| Deadlock que aparece una vez por semana | especialista |
+| Renombrar un índice | implementador (con revisor-migraciones si la tabla es grande) |
+| Diseñar la réplica lógica hacia el data warehouse | especialista |
+| "¿Qué versión de PostgreSQL usamos?" | El líder (está en el CLAUDE.md; delegar no compensa) |
+
 ## Ejercicio 7.1 — Casos que el hook no detecta
 
 - `psql -f borrar.sql` (el SQL está en un fichero).

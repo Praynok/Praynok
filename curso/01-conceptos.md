@@ -38,6 +38,20 @@ La pregunta que más se repite. Regla práctica:
 > Las skills son el **qué sabemos hacer**. Los subagentes son el **quién lo hace** y con
 > qué permisos. Un subagente puede llevar varias skills precargadas.
 
+> ### ⚠️ Error frecuente: "un agente es un conjunto de skills"
+> No exactamente. Un **agente** es un modelo que razona, un bucle (observa → decide → actúa →
+> comprueba → repite), unas **herramientas** para actuar (leer ficheros, ejecutar `psql`…) y unas
+> instrucciones. Una **skill** es un manual: le dice al agente *cómo* hacer algo, pero por sí
+> sola no ejecuta nada.
+>
+> Analogía: el agente es el DBA (criterio, manos y forma de trabajar); las skills son sus
+> runbooks. Un agente sin skills sigue siendo un agente; un montón de skills sin agente es
+> solo documentación.
+>
+> Lo que sí es cierto: lo que distingue a un agente **especializado** (el revisor, el de
+> guardia) de uno genérico suele ser su combinación de skills, herramientas, modelo e
+> instrucciones. Eso es exactamente lo que se configura en el módulo 6.
+
 ## 1.4 Divulgación progresiva (por qué las skills escalan)
 
 Al iniciar sesión Claude solo ve el `name` y la `description` de cada skill. Cuando una

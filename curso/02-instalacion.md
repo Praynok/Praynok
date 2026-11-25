@@ -64,6 +64,27 @@ claude            # la primera vez abre el login en el navegador
 **Modo plan** (`Shift+Tab` hasta "plan mode"): Claude investiga y propone, pero no
 modifica nada. Es el modo recomendado para empezar cualquier tarea sobre una base de datos.
 
+## 2.4 Dónde usar Claude Code: CLI, IDE, escritorio o web
+
+Claude Code es **un único producto con varias formas de usarlo**. El agente es el mismo
+(skills, agentes, hooks, MCP…); lo que cambia es **dónde se ejecuta** y, por tanto, **a qué llega**.
+
+| Superficie | Dónde se ejecuta | ¿Llega a vuestras BD internas? | Uso recomendado en el equipo DBA |
+|---|---|---|---|
+| **CLI** (`claude` en la terminal) | En tu máquina o en el bastión | ✅ Sí, con tu red, VPN, `psql` y credenciales | **Todo lo que toque una base de datos.** Es también la única para scripts y CI (`claude -p`) |
+| **Extensión de IDE** (VS Code, JetBrains) | En tu máquina | ✅ Igual que la CLI | Escribir migraciones viendo los cambios en el editor |
+| **App de escritorio** (Mac/Windows) | En tu máquina | ✅ Igual que la CLI | Quien prefiera interfaz gráfica |
+| **Web / móvil** (claude.ai/code) | En un contenedor temporal en la nube que clona el repo de GitHub | ❌ No, salvo que conectes tu máquina con Remote Control | Mantener el repo de skills y plugins, revisar PRs, tareas largas que no necesitan la BD |
+
+Consecuencias prácticas:
+- **Instalad la CLI en los bastiones**: es desde donde Claude puede lanzar `psql`/`sqlplus`
+  con el rol de solo lectura.
+- **La web sirve para trabajar *sobre* el marketplace** (escribir una skill, preparar un PR),
+  no para diagnosticar una instancia. Lo que no se suba con commit y push se pierde al cerrar
+  la sesión.
+- Las funciones nuevas a veces llegan antes a una superficie que a otra; ante la duda,
+  consulta la documentación oficial.
+
 ## Ejercicio 2
 
 1. Instala Claude Code y ejecuta `claude doctor`.

@@ -18,6 +18,15 @@
 - Para cambios en producción: genera la RFC con `/dba-core:solicitud-cambio-produccion`.
 - Convenciones de nombres de este proyecto: skill `convenciones-esquema`.
 
+## Modo líder (un modelo por rol)
+Tú eres el líder y respondes de la calidad final. Delega así:
+- Leer o buscar en el repo → `explorador` (Haiku).
+- Escribir o modificar ficheros → `implementador` (Sonnet).
+- Problemas difíciles o de alto riesgo (deadlocks, particionado, HA, migraciones en tablas
+  grandes, permisos) → `especialista` (Fable). Es el más caro: úsalo solo en esos casos.
+- Revisar migraciones → `revisor-migraciones`.
+Intervén tú solo si un subagente se atasca, y revisa siempre su resultado antes de darlo por bueno.
+
 ## Estilo
 - Respuestas en español. SQL en mayúsculas para palabras clave.
 - Cada recomendación debe incluir cómo revertirla.
