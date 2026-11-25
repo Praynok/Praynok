@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "postgres-staging": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "<paquete-mcp-postgres-aprobado-por-seguridad>", "${PG_RO_URL}"],
+      "env": {}
+    }
+  }
+}

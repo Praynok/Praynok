@@ -1,0 +1,9 @@
+{
+  "name": "dba-postgres",
+  "version": "1.0.0",
+  "description": "Runbooks de PostgreSQL: salud de la instancia y bloqueos.",
+  "author": {
+    "name": "Equipo DBA"
+  },
+  "keywords": ["dba", "postgresql"]
+}

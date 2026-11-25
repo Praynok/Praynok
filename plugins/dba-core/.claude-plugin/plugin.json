@@ -1,0 +1,9 @@
+{
+  "name": "dba-core",
+  "version": "1.0.0",
+  "description": "Métodos DBA independientes del motor, agentes revisores y hooks de seguridad.",
+  "author": {
+    "name": "Equipo DBA"
+  },
+  "keywords": ["dba", "sql", "migraciones", "rendimiento"]
+}

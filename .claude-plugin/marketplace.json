@@ -1,0 +1,26 @@
+{
+  "name": "dba-team",
+  "owner": {
+    "name": "Equipo DBA"
+  },
+  "metadata": {
+    "description": "Marketplace interno del equipo DBA: métodos de trabajo (skills), agentes especializados y guardarraíles.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "dba-core",
+      "source": "./plugins/dba-core",
+      "description": "Métodos comunes a cualquier motor: análisis de planes, revisión de migraciones, triage de rendimiento, solicitudes de cambio y guardarraíles contra SQL destructivo.",
+      "version": "1.0.0",
+      "category": "database"
+    },
+    {
+      "name": "dba-postgres",
+      "source": "./plugins/dba-postgres",
+      "description": "Runbooks específicos de PostgreSQL: chequeo de salud e investigación de bloqueos.",
+      "version": "1.0.0",
+      "category": "database"
+    }
+  ]
+}

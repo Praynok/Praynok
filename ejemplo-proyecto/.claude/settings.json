@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "extraKnownMarketplaces": {
+    "dba-team": {
+      "source": {
+        "source": "github",
+        "repo": "praynok/praynok"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "dba-core@dba-team": true,
+    "dba-postgres@dba-team": true
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Grep",
+      "Glob",
+      "Bash(psql:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git status)"
+    ],
+    "ask": [
+      "Bash(pg_dump:*)",
+      "Edit(migrations/**)",
+      "Write(migrations/**)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(**/*.pgpass)",
+      "Read(~/.pgpass)",
+      "Bash(dropdb:*)",
+      "Bash(pg_restore:*)",
+      "Bash(psql*prod*)"
+    ]
+  },
+  "env": {
+    "PGAPPNAME": "claude-code"
+  }
+}
